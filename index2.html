@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DiningHall下载</title>
+    <style type="text/css">
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", sans-serif;
+            font-size: 14px;
+        }
+
+        .content {
+            height: 90%;
+            overflow: auto;
+        }
+
+        .logo {
+            background-image: url(bg.png);
+            height: 130px;
+            padding-top: 20px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .logo>div {
+            font-size: 16px;
+        }
+
+        .image-display>img {
+            float: left;
+            display: block;
+            width: 30%;
+            height: 240px;
+            margin-left: 10px;
+        }
+
+        .picture-Preview {
+            overflow-y: hidden;
+            overflow-x: auto;
+        }
+
+        .image-display {
+            width: 500px;
+            overflow: auto;
+            padding: 5px 0;
+        }
+
+        .image-display:after {
+            clear: both;
+            content: ' ';
+            display: block;
+        }
+
+        .attribute {
+            padding: 10px 16px;
+            border-bottom: 1px solid gainsboro;
+        }
+
+        .introduction {
+            padding: 10px 16px;
+
+        }
+
+        .footer {
+            height: 10%;
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+        }
+
+        .footer button {
+            font-size: 16px;
+            background: #0084ff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            color: white;
+            margin-top: 10px;
+            min-width: 240px;
+        }
+
+        #weiXin {
+            position: fixed;
+            left: 0;
+            top: 0;
+            background: rgba(0, 0, 0, 0.8);
+            filter: alpha(opacity=80);
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            text-align: center;
+            padding-top: 10px;
+            display: none;
+        }
+
+        .shadow {
+            text-shadow: black 0.05em 0.05em 0.05em
+        }
+
+        #weiXin>img {
+            width: 95%;
+        }
+
+        #weixin-tip {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background: rgba(0, 0, 0, 0.8);
+            filter: alpha(opacity=80);
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+        }
+
+        #weixin-tip p {
+            text-align: center;
+            margin-top: 10%;
+            padding: 0 5%;
+            position: relative;
+        }
+
+        #weixin-tip .close {
+            display: none;
+            color: #fff;
+            padding: 5px;
+            font: bold 20px/24px simsun;
+            text-shadow: 0 1px 0 #ddd;
+            position: absolute;
+            top: 0;
+            left: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="weixin-tip">
+        <p><img src="live_weixin.png" alt="微信打开" width="100%" /><span id="close" title="关闭" class="close">×</span></p>
+    </div>
+    <div class="content">
+        <div class="logo">
+            <img src="logo.png" alt="" width="20%" style="border-radius: 0.8rem;">
+            <div class="shadow">DiningHall</div>
+        </div>
+        <div class="picture-Preview">
+            <div class="image-display">
+                <img src="0.png" alt="">
+                <img src="1.png" alt="">
+                <img src="2.png" alt="">
+            </div>
+        </div>
+        <div class="attribute">
+            <div>资费：免费</div>
+            <div>大小：20M</div>
+            <div>版本：1.6.7</div>
+            <div>开发：溢达集团纺织有限公司</div>
+        </div>
+        <div class="introduction">
+            <h3>应用介绍</h3>
+            <div> 这是一个订餐app，让我们溢起订餐吧。</div>
+        </div>
+        <div class="introduction">
+            <h3>更新日志</h3>
+            <div>1.修复部分IOS用户需要经常登录问题</div>
+            <div>2.其它调整</div>
+        </div>
+    </div>
+    <div class="footer">
+        <button onclick='download()' id="download">立 即 安 装（测试）</button>
+    </div>
+    
+    <script>
+        function download() {
+            var download = document.getElementById('download');
+            download.innerHTML = '准 备 下 载 中...';
+            var isiOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+            if (isiOS) {
+                window.location.href = "itms-services://?action=download-manifest&url=https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/dininghallupload/app2.plist";
+                setTimeout(function () {
+                    download.innerHTML = '点击安装后,请按Home键在桌面查看';
+                }, 2000);
+            } else {
+                window.location.href = "https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/sit/Appversion/dininghall2.apk";
+                setTimeout(function () {
+                    download.innerHTML = '立 即 安 装';
+                }, 4000);
+            }
+        }
+
+
+        window.onload = function () {
+            var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight; //兼容IOS，不需要的可以去掉
+            
+            var tip = document.getElementById('weixin-tip');
+            var close = document.getElementById('close');
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                tip.style.height = winHeight + 'px';
+                tip.style.display = 'block';
+
+                close.onclick = function () {
+                    tip.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
