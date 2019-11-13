@@ -22,7 +22,7 @@
 
         .logo {
             background-image: url(bg.png);
-            height: 130px;
+            height: 180px;
             padding-top: 20px;
             color: #fff;
             text-align: center;
@@ -76,6 +76,21 @@
         }
 
         .footer button {
+            font-size: 16px;
+            background: #a4a7aa;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            color: white;
+            margin-top: 10px;
+            min-width: 240px;
+        }
+        .btnSetup{
+            height: 10%;
+            width: 100%;
+            text-align: center;
+        } 
+        .btnSetup button {
             font-size: 16px;
             background: #0084ff;
             padding: 10px 20px;
@@ -148,7 +163,11 @@
         <div class="logo">
             <img src="logo.png" alt="" width="20%" style="border-radius: 0.8rem;">
             <div class="shadow">DiningHall</div>
+    <div class="btnSetup">
+        <button onclick='download()' id="download">立 即 安 装</button>
+    </div>
         </div>
+
         <div class="picture-Preview">
             <div class="image-display">
                 <img src="0.png" alt="">
@@ -171,9 +190,9 @@
             <div>1.累积更新</div>
         </div>
     </div>
-    <div class="footer">
+    <!-- <div class="footer">
         <button onclick='download()' id="download">立 即 安 装</button>
-    </div>
+    </div> -->
     
     <script>
         function download() {
