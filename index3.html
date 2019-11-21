@@ -297,7 +297,7 @@
                 this.btnDownloadText =  this.curLanguage.DownloadText2;
                 var isiOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
                 console.log(isiOS);
-                if (isiOS==0) {
+                if (isiOS) {
                     window.location.href = "itms-services://?action=download-manifest&url=https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/dininghallupload/app3.plist";
                     setTimeout(function () {
                         app.$data.btnDownloadText = app.$data.curLanguage.DownloadText_ios;
