@@ -297,7 +297,7 @@
                 this.btnDownloadText =  this.curLanguage.DownloadText2;
                 var isiOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
                 console.log(isiOS);
-                if (isiOS) {
+                if (isiOS==0) {
                     window.location.href = "itms-services://?action=download-manifest&url=https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/dininghallupload/app.plist";
                     setTimeout(function () {
                         app.$data.btnDownloadText = app.$data.curLanguage.DownloadText_ios;
@@ -305,7 +305,7 @@
                 } else {
                     window.location.href = "https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/sit/Appversion/dininghall.apk";
                     setTimeout(function () {
-                        app.$data.btnDownloadText = app.$data.curLanguage.DownloadText2;
+                        app.$data.btnDownloadText = app.$data.curLanguage.DownloadText1;
                     }, 4000);
                 }
             }
