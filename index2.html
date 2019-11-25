@@ -241,7 +241,8 @@
                     Copyright:"所属",
                     CompanyName:"溢达集团纺织有限公司",
                     SummaryText:"应用介绍",
-                    SummaryValue:"这是一个订餐APP，让我们溢起订餐吧。"
+                    SummaryValue:"这是一个订餐APP，让我们溢起订餐吧。",
+                    IOSPlist:"itms-services://?action=download-manifest&url=https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/dininghallupload/app2_zh.plist"
                 },
                 en:{
                     Download:"Download",
@@ -255,7 +256,8 @@
                     Copyright:"Copyright",
                     CompanyName:"Esquel Group",
                     SummaryText:"Summary",
-                    SummaryValue:"This is a ordering APP, let‘s order a good meal."
+                    SummaryValue:"This is a ordering APP, let‘s order a good meal.",
+                    IOSPlist:"itms-services://?action=download-manifest&url=https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/dininghallupload/app2.plist"
                 },
                 vi:{
                     Download:"Tải về",
@@ -269,7 +271,8 @@
                     Copyright:"Bản quyền",
                     CompanyName:"Esquel Group",
                     SummaryText:"Tóm lược",
-                    SummaryValue:"Đây là một ứng dụng đặt hàng, hãy đặt một bữa ăn ngon."
+                    SummaryValue:"Đây là một ứng dụng đặt hàng, hãy đặt một bữa ăn ngon.",
+                    IOSPlist:"itms-services://?action=download-manifest&url=https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/dininghallupload/app2.plist"
                 }
             },
             curLanguage:{},
@@ -298,7 +301,7 @@
                 var isiOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
                 console.log(isiOS);
                 if (isiOS) {
-                    window.location.href = "itms-services://?action=download-manifest&url=https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/dininghallupload/app2.plist";
+                    window.location.href = this.curLanguage.IOSPlist;
                     setTimeout(function () {
                         app.$data.btnDownloadText = app.$data.curLanguage.DownloadText_ios;
                     }, 2000);
