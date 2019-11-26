@@ -159,6 +159,12 @@
             top: 0;
             left: 5%;
         }
+        #weixin-tip .desc {
+            color: #fff;
+            padding: 1rem 1rem 0 2rem;
+            font-size:1.6rem;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -166,6 +172,11 @@
     <div id="app">
         <div id="weixin-tip">
             <p><img src="live_weixin.png"  width="100%" /><span id="close" class="close">×</span>
+                <div class="weixin-tip desc">
+                    <span style="color: red;">① </span>{{curLanguage.WeixinTip1}}<br /><br />
+                    <span style="color: red;">② </span>{{curLanguage.WeixinTip2}}
+                </div>
+            </p>
             </p>
         </div>
         <div class="content">
@@ -243,6 +254,8 @@
                     CompanyName:"溢达集团纺织有限公司",
                     SummaryText:"应用介绍",
                     SummaryValue:"这是一个订餐APP，让我们溢起订餐吧。",
+                    WeixinTip1:"点击右上角的“...”按钮",
+                    WeixinTip2:"选择在“浏览器”中打开",
                     IOSPlist:"itms-services://?action=download-manifest&url=https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/dininghallupload/app2_zh.plist"
                 },
                 en:{
@@ -259,6 +272,8 @@
                     CompanyName:"Esquel Group",
                     SummaryText:"Summary",
                     SummaryValue:"This is a ordering APP, Let‘s order a good meal.",
+                    WeixinTip1:"Click the “...“ button in the upper right corner",
+                    WeixinTip2:"Click to open in “Browser”",
                     IOSPlist:"itms-services://?action=download-manifest&url=https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/dininghallupload/app2.plist"
                 },
                 vi:{
@@ -275,6 +290,8 @@
                     CompanyName:"Esquel Group",
                     SummaryText:"Tóm lược",
                     SummaryValue:"Đây là một ứng dụng đặt hàng, hãy đặt một bữa ăn ngon.",
+                    WeixinTip1:"Nhấp vào nút “...” ở góc trên bên phải",
+                    WeixinTip2:"Nhấp để mở trong “Trình duyệt”",
                     IOSPlist:"itms-services://?action=download-manifest&url=https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/dininghallupload/app2.plist"
                 }
             },
