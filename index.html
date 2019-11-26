@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Dining Hall</title>
+    <title>Esquel EAT</title>
 
     <script src="vue.js"></script>
     <style type="text/css">
@@ -171,7 +171,7 @@
         <div class="content">
             <div class="logo">
                 <img src="logo.png" alt="" width="20%" style="border-radius: 0.8rem;">
-                <div class="shadow">DiningHall</div>
+                <div class="shadow">{{curLanguage.APPName}}</div>
                 <div class="btnSetup">
                     <button v-on:click='download()'>{{btnDownloadText}}</button>
                 </div>
@@ -230,6 +230,7 @@
         data: {
             languageText:{
                 zh:{
+                    APPName:"溢起美食",
                     Download:"下载",
                     DownloadText1:"立 即 安 装",
                     DownloadText2:"准 备 下 载 中...",
@@ -245,6 +246,7 @@
                     IOSPlist:"itms-services://?action=download-manifest&url=https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/dininghallupload/app_zh.plist"
                 },
                 en:{
+                    APPName:"Esquel EAT",
                     Download:"Download",
                     DownloadText1:"Install Now",
                     DownloadText2:"Preparing...",
@@ -260,6 +262,7 @@
                     IOSPlist:"itms-services://?action=download-manifest&url=https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/dininghallupload/app.plist"
                 },
                 vi:{
+                    APPName:"Esquel EAT",
                     Download:"Tải về",
                     DownloadText1:"Cài đặt ngay",
                     DownloadText2:"Chuẩn bị...",
@@ -283,15 +286,15 @@
             browLang = browLang.substr(0, 2);
             if(browLang == 'zh'){
                 this.curLanguage=this.languageText.zh;
-                document.title="Dining Hall "+this.languageText.zh.Download;
+                document.title=this.languageText.zh.APPName+" " +this.languageText.zh.Download;
                 this.btnDownloadText=this.languageText.zh.DownloadText1;
             }else if(browLang == 'vi'){
                 this.curLanguage=this.languageText.vi;
-                document.title="Dining Hall "+this.languageText.vi.Download;
+                document.title=this.languageText.vi.APPName+" " +this.languageText.vi.Download;
                 this.btnDownloadText=this.languageText.vi.DownloadText1;
             }else{
                 this.curLanguage=this.languageText.en;
-                document.title="Dining Hall "+this.languageText.en.Download;
+                document.title=this.languageText.en.APPName+" " +this.languageText.en.Download;
                 this.btnDownloadText=this.languageText.en.DownloadText1;
             }
         },
