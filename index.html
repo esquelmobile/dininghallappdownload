@@ -159,10 +159,11 @@
             top: 0;
             left: 5%;
         }
+
         #weixin-tip .desc {
             color: #fff;
             padding: 1rem 1rem 0 2rem;
-            font-size:1.6rem;
+            font-size: 1.6rem;
             font-weight: bold;
         }
     </style>
@@ -171,7 +172,7 @@
 <body>
     <div id="app">
         <div id="weixin-tip">
-            <p><img src="live_weixin.png"  width="100%" /><span id="close" class="close">×</span>
+            <p><img src="live_weixin.png" width="100%" /><span id="close" class="close">×</span>
                 <div class="weixin-tip desc">
                     <span style="color: red;">① </span>{{curLanguage.WeixinTip1}}<br /><br />
                     <span style="color: red;">② </span>{{curLanguage.WeixinTip2}}
@@ -238,91 +239,97 @@
     var app = new Vue({
         el: '#app',
         data: {
-            languageText:{
-                zh:{
-                    APPName:"溢起美食",
-                    Download:"下载",
-                    DownloadText1:"立 即 安 装",
-                    DownloadText2:"准 备 下 载 中...",
-                    DownloadText_ios:"点击安装后,请按Home键在桌面查看",
-                    AppTypeText:"类型",
-                    AppTypeValue:"服务 生活 工具",
-                    Size:"大小",
-                    Version:"版本",
-                    Copyright:"所属",
-                    CompanyName:"溢达集团纺织有限公司",
-                    SummaryText:"应用介绍",
-                    SummaryValue:"这是一个订餐APP，让我们溢起订餐吧。",
-                    WeixinTip1:"点击右上角的“...”按钮",
-                    WeixinTip2:"选择在“浏览器”中打开",
-                    IOSPlist:"itms-services://?action=download-manifest&url=https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/dininghallupload/app_zh.plist"
+            languageText: {
+                zh: {
+                    "APPName": "溢起美食",
+                    "Download": "下载",
+                    "DownloadText1": "立 即 安 装",
+                    "DownloadText1_BETA": "立即安装(内测版)",
+                    "DownloadText1_SIT": "立即安装(测试环境)",
+                    "DownloadText2": "准 备 下 载 中...",
+                    "DownloadText_IOS": "点击安装后请按Home键在桌面查看",
+                    "AppTypeText": "类型",
+                    "AppTypeValue": "服务 生活 工具",
+                    "Size": "大小",
+                    "Version": "版本",
+                    "Copyright": "所属",
+                    "CompanyName": "溢达集团纺织有限公司",
+                    "SummaryText": "应用介绍",
+                    "SummaryValue": "这是一个订餐APP，让我们溢起订餐吧。",
+                    "WeixinTip1": "点击右上角的“...”按钮",
+                    "WeixinTip2": "选择在“浏览器”中打开",
+                    IOSPlist: "itms-services://?action=download-manifest&url=https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/dininghallupload/app_zh.plist"
                 },
-                en:{
-                    APPName:"ESQUEL EAT",
-                    Download:"Download",
-                    DownloadText1:"Install Now",
-                    DownloadText2:"Preparing...",
-                    DownloadText_ios:"Click to install, please view from the desktop",
-                    AppTypeText:"Type",
-                    AppTypeValue:"Service,Daily,Tools",
-                    Size:"Size",
-                    Version:"Version",
-                    Copyright:"Copyright",
-                    CompanyName:"Esquel Group",
-                    SummaryText:"Summary",
-                    SummaryValue:"This is an ordering APP, Let‘s order a good meal.",
-                    WeixinTip1:"Click the “...” button at the upper right corner",
-                    WeixinTip2:"Click to open in “Browser”",
-                    IOSPlist:"itms-services://?action=download-manifest&url=https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/dininghallupload/app.plist"
+                en: {
+                    "APPName": "ESQUEL EAT",
+                    "Download": "Download",
+                    "DownloadText1": "Install Now",
+                    "DownloadText1_BETA": "Install Now(Beta Version)",
+                    "DownloadText1_SIT": "Install Now(SIT Version)",
+                    "DownloadText2": "Preparing...",
+                    "DownloadText_IOS": "Click to install please view from the desktop",
+                    "AppTypeText": "Type",
+                    "AppTypeValue": "Service Daily Tools",
+                    "Size": "Size",
+                    "Version": "Version",
+                    "Copyright": "Copyright",
+                    "CompanyName": "Esquel Group",
+                    "SummaryText": "Summary",
+                    "SummaryValue": "This is an ordering APP Let‘s order a good meal.",
+                    "WeixinTip1": "Click the “...” button at the upper right corner",
+                    "WeixinTip2": "Open in “Browser”",
+                    IOSPlist: "itms-services://?action=download-manifest&url=https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/dininghallupload/app.plist"
                 },
-                vi:{
-                    APPName:"ESQUEL EAT",
-                    Download:"Tải về",
-                    DownloadText1:"Cài đặt ngay",
-                    DownloadText2:"Chuẩn bị...",
-                    DownloadText_ios:"Sau khi nhấp vào cài đặt, vui lòng quay lại màn hình để xem",
-                    AppTypeText:"Kiểu",
-                    AppTypeValue:"Dịch vụ, hàng ngày, công cụ",
-                    Size:"Kích thước",
-                    Version:"Phiên bản",
-                    Copyright:"Bản quyền",
-                    CompanyName:"Esquel Group",
-                    SummaryText:"Tóm lược",
-                    SummaryValue:"Đây là một ứng dụng đặt hàng, hãy đặt một bữa ăn ngon.",
-                    WeixinTip1:"Nhấp vào nút “...” ở góc trên bên phải",
-                    WeixinTip2:"Nhấp để mở trong “Trình duyệt”",
-                    IOSPlist:"itms-services://?action=download-manifest&url=https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/dininghallupload/app.plist"
+                vi: {
+                    "APPName": "ESQUEL EAT",
+                    "Download": "Tải về",
+                    "DownloadText1": "Cài đặt ngay",
+                    "DownloadText1_BETA": "Cài đặt ngay(bản thử nghiệm)",
+                    "DownloadText1_SIT": "Cài đặt ngay(bản kiểm tra)",
+                    "DownloadText2": "Chuẩn bị...",
+                    "DownloadText_IOS": "Sau khi cài đặt, vui lòng quay lại màn hình để xem",
+                    "AppTypeText": "Loại",
+                    "AppTypeValue": "Các công cụ dịch vụ hàng ngày",
+                    "Size": "Kích thước",
+                    "Version": "Phiên bản",
+                    "Copyright": "Bản quyền",
+                    "CompanyName": "Tập đoàn Esquel",
+                    "SummaryText": "Tóm lược",
+                    "SummaryValue": "Đây là một ứng dụng đặt hàng. Hãy đặt một bữa ăn ngon.",
+                    "WeixinTip1": "Nhấp vào nút “...” ở góc trên bên phải",
+                    "WeixinTip2": "Mở bằng “Trình duyệt”",
+                    IOSPlist: "itms-services://?action=download-manifest&url=https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/dininghallupload/app.plist"
                 }
             },
-            curLanguage:{},
+            curLanguage: {},
             btnDownloadText: '立 即 安 装'
         },
         created: function () {
-            var browLang = navigator.language||navigator.userLanguage;
+            var browLang = navigator.language || navigator.userLanguage;
             browLang = browLang.substr(0, 2);
-            if(browLang == 'zh'){
-                this.curLanguage=this.languageText.zh;
-                document.title=this.languageText.zh.APPName+" " +this.languageText.zh.Download;
-                this.btnDownloadText=this.languageText.zh.DownloadText1;
-            }else if(browLang == 'vi'){
-                this.curLanguage=this.languageText.vi;
-                document.title=this.languageText.vi.APPName+" " +this.languageText.vi.Download;
-                this.btnDownloadText=this.languageText.vi.DownloadText1;
-            }else{
-                this.curLanguage=this.languageText.en;
-                document.title=this.languageText.en.APPName+" " +this.languageText.en.Download;
-                this.btnDownloadText=this.languageText.en.DownloadText1;
+            if (browLang == 'zh') {
+                this.curLanguage = this.languageText.zh;
+                document.title = this.languageText.zh.APPName + " " + this.languageText.zh.Download;
+                this.btnDownloadText = this.languageText.zh.DownloadText1;
+            } else if (browLang == 'vi') {
+                this.curLanguage = this.languageText.vi;
+                document.title = this.languageText.vi.APPName + " " + this.languageText.vi.Download;
+                this.btnDownloadText = this.languageText.vi.DownloadText1;
+            } else {
+                this.curLanguage = this.languageText.en;
+                document.title = this.languageText.en.APPName + " " + this.languageText.en.Download;
+                this.btnDownloadText = this.languageText.en.DownloadText1;
             }
         },
         methods: {
             download: function () {
-                this.btnDownloadText =  this.curLanguage.DownloadText2;
+                this.btnDownloadText = this.curLanguage.DownloadText2;
                 var isiOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
                 console.log(isiOS);
                 if (isiOS) {
                     window.location.href = this.curLanguage.IOSPlist;
                     setTimeout(function () {
-                        app.$data.btnDownloadText = app.$data.curLanguage.DownloadText_ios;
+                        app.$data.btnDownloadText = app.$data.curLanguage.DownloadText_IOS;
                     }, 2000);
                 } else {
                     window.location.href = "https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/sit/Appversion/dininghall.apk";
