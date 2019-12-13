@@ -13,15 +13,15 @@
    <br />
    <br />
    <br />
-   <a href="javascript:parent.window.ionicPage.Toast('aabbcc')">Toast</a>
+   <a href="javascript:parent.postMessage({type:'Toast',msg:'aabbcc'},'*')">Toast</a>
    <br />
    <br />
    <br />
-   <a href="javascript:parent.window.ionicPage.Back()">Back</a>
+   <a href="javascript:parent.postMessage({type:'SetTitle',title:'aabbcc'},'*')">SetTitle</a>
    <br />
    <br />
    <br />
-   <a href="javascript:parent.window.ionicPage.SetTitle('NewTitle')">SetTitle</a>
+   <a href="javascript:parent.postMessage({type:'Back'},'*')">Back</a>
    <br />
    <br />
    <br />
