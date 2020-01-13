@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ESQUEL EAT</title>
+    <title>Dining Hall</title>
 
     <script src="vue.js"></script>
     <style type="text/css">
@@ -159,10 +159,11 @@
             top: 0;
             left: 5%;
         }
+
         #weixin-tip .desc {
             color: #fff;
             padding: 1rem 1rem 0 2rem;
-            font-size:1.6rem;
+            font-size: 1.6rem;
             font-weight: bold;
         }
     </style>
@@ -171,7 +172,7 @@
 <body>
     <div id="app">
         <div id="weixin-tip">
-            <p><img src="live_weixin.png"  width="100%" /><span id="close" class="close">×</span>
+            <p><img src="live_weixin.png" width="100%" /><span id="close" class="close">×</span>
                 <div class="weixin-tip desc">
                     <span style="color: red;">① </span>{{curLanguage.WeixinTip1}}<br /><br />
                     <span style="color: red;">② </span>{{curLanguage.WeixinTip2}}
@@ -200,7 +201,7 @@
             <div class="attribute">
                 <div>{{curLanguage.AppTypeText}}: {{curLanguage.AppTypeValue}}</div>
                 <div>{{curLanguage.Size}}: 20M</div>
-                <div>{{curLanguage.Version}}: 1.6.8</div>
+                <div>{{curLanguage.Version}}: 1.6.9</div>
                 <div>{{curLanguage.Copyright}}: {{curLanguage.CompanyName}}</div>
             </div>
             <div class="introduction">
@@ -239,8 +240,8 @@
     var app = new Vue({
         el: '#app',
         data: {
-            languageText:{
-                zh:{
+            languageText: {
+                zh: {
                     "APPName": "溢起美食",
                     "Download": "下载",
                     "DownloadText1": "立即安装(内测版)",
@@ -258,9 +259,9 @@
                     "SummaryValue": "这是一个订餐APP，让我们溢起订餐吧。",
                     "WeixinTip1": "点击右上角的“...”按钮",
                     "WeixinTip2": "选择在“浏览器”中打开",
-                    IOSPlist:"itms-services://?action=download-manifest&url=https://edininghall.oss-cn-shenzhen.aliyuncs.com/dininghall/Appversion/ios_dininghall_zh2.plist"
+                    IOSPlist: "itms-services://?action=download-manifest&url=https://edininghall.oss-cn-shenzhen.aliyuncs.com/dininghall/Appversion/ios_dininghall_zh2.plist"
                 },
-                en:{
+                en: {
                     "APPName": "ESQUEL EAT",
                     "Download": "Download",
                     "DownloadText1": "Install Now(Beta Version)",
@@ -278,12 +279,12 @@
                     "SummaryValue": "This is an ordering APP Let‘s order a good meal.",
                     "WeixinTip1": "Click the “...” button at the upper right corner",
                     "WeixinTip2": "Open in “Browser”",
-                    IOSPlist:"itms-services://?action=download-manifest&url=https://edininghall.oss-cn-shenzhen.aliyuncs.com/dininghall/Appversion/ios_dininghall2.plist"
+                    IOSPlist: "itms-services://?action=download-manifest&url=https://edininghall.oss-cn-shenzhen.aliyuncs.com/dininghall/Appversion/ios_dininghall2.plist"
                 },
-                vi:{
+                vi: {
                     "APPName": "ESQUEL EAT",
                     "Download": "Tải về",
-                    "DownloadText1": "Cài đặt ngay",
+                    "DownloadText1": "Cài đặt ngay (bản thử nghiệm)",
                     "DownloadText1_BETA": "Cài đặt ngay (bản thử nghiệm)",
                     "DownloadText1_SIT": "Cài đặt ngay (bản kiểm tra)",
                     "DownloadText2": "Chuẩn bị...",
@@ -298,32 +299,32 @@
                     "SummaryValue": "Đây là một ứng dụng đặt món. Hãy đặt một bữa ăn ngon.",
                     "WeixinTip1": "Nhấp vào nút “...” ở góc trên bên phải",
                     "WeixinTip2": "Mở bằng “Trình duyệt”",
-                    IOSPlist:"itms-services://?action=download-manifest&url=https://edininghall.oss-cn-shenzhen.aliyuncs.com/dininghall/Appversion/ios_dininghall2.plist"
+                    IOSPlist: "itms-services://?action=download-manifest&url=https://edininghall.oss-cn-shenzhen.aliyuncs.com/dininghall/Appversion/ios_dininghall2.plist"
                 }
             },
-            curLanguage:{},
+            curLanguage: {},
             btnDownloadText: '立 即 安 装'
         },
         created: function () {
-            var browLang = navigator.language||navigator.userLanguage;
+            var browLang = navigator.language || navigator.userLanguage;
             browLang = browLang.substr(0, 2);
-            if(browLang == 'zh'){
-                this.curLanguage=this.languageText.zh;
-                document.title=this.languageText.zh.APPName+" " +this.languageText.zh.Download;
-                this.btnDownloadText=this.languageText.zh.DownloadText1;
-            }else if(browLang == 'vi'){
-                this.curLanguage=this.languageText.vi;
-                document.title=this.languageText.vi.APPName+" " +this.languageText.vi.Download;
-                this.btnDownloadText=this.languageText.vi.DownloadText1;
-            }else{
-                this.curLanguage=this.languageText.en;
-                document.title=this.languageText.en.APPName+" " +this.languageText.en.Download;
-                this.btnDownloadText=this.languageText.en.DownloadText1;
+            if (browLang == 'zh') {
+                this.curLanguage = this.languageText.zh;
+                document.title = this.languageText.zh.APPName + " " + this.languageText.zh.Download;
+                this.btnDownloadText = this.languageText.zh.DownloadText1;
+            } else if (browLang == 'vi') {
+                this.curLanguage = this.languageText.vi;
+                document.title = this.languageText.vi.APPName + " " + this.languageText.vi.Download;
+                this.btnDownloadText = this.languageText.vi.DownloadText1;
+            } else {
+                this.curLanguage = this.languageText.en;
+                document.title = this.languageText.en.APPName + " " + this.languageText.en.Download;
+                this.btnDownloadText = this.languageText.en.DownloadText1;
             }
         },
         methods: {
             download: function () {
-                this.btnDownloadText =  this.curLanguage.DownloadText2;
+                this.btnDownloadText = this.curLanguage.DownloadText2;
                 var isiOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
                 console.log(isiOS);
                 if (isiOS) {
@@ -332,7 +333,7 @@
                         app.$data.btnDownloadText = app.$data.curLanguage.DownloadText_IOS;
                     }, 2000);
                 } else {
-                    window.location.href = "https://fasohdininghallstorage02.blob.core.chinacloudapi.cn/dininghallupload/dininghall2.apk";
+                    window.location.href = "https://edininghall.oss-cn-shenzhen.aliyuncs.com/dininghall/Appversion/dininghall2.apk";
                     setTimeout(function () {
                         app.$data.btnDownloadText = app.$data.curLanguage.DownloadText1;
                     }, 4000);
