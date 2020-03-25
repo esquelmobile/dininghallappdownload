@@ -21,6 +21,28 @@
             height: 100%;
             overflow: auto;
         }
+        div#preloader {
+            /*background: linear-gradient(#003dbc, #2283f9);#1f91f3; url("pageloading.gif") no-repeat scroll center center;*/
+            background-image: url("esquel.png"),linear-gradient(#003dbc, #2283f9);
+            background-repeat: no-repeat,no-repeat;
+            background-position: right bottom,center center;
+            background-size:20%,auto;
+            height: 100%;
+            left: 0;
+            overflow: visible;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: justify;
+            color: white;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 20px;
+        }
 
         .logo {
             background-image: url(bg.jpg);
@@ -36,13 +58,17 @@
             font-size: 16px;
         }
 
-        .image-display>img {
+        /* .image-display>img {
             float: left;
             display: block;
             width: 19%;
             height: 240px;
             margin-left: 4px;
             box-shadow: lightgrey 0em 0.2em 0.2em;
+        } */
+        .image-display>img{
+            height: 240px;
+            margin-left: 4px;
         }
 
         .picture-Preview {
@@ -171,6 +197,7 @@
 
 <body>
     <div id="app">
+        <div id="preloader" v-if="showPreLoader">Loading...</div>
         <div id="weixin-tip">
             <p><img src="live_weixin.png" width="100%" /><span id="close" class="close">×</span>
                 <div class="weixin-tip desc">
@@ -191,11 +218,7 @@
 
             <div class="picture-Preview">
                 <div class="image-display">
-                    <img src="01.jpg" alt="">
-                    <img src="02.jpg" alt="">
-                    <img src="03.jpg" alt="">
-                    <img src="04.jpg" alt="">
-                    <img src="05.jpg" alt="">
+                    <img src="1.jpg" alt="">
                 </div>
             </div>
             <div class="attribute">
@@ -219,23 +242,6 @@
 
 </html>
 
-<script>
-    window.onload = function () {
-        var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight; //兼容IOS，不需要的可以去掉
-
-        var tip = document.getElementById('weixin-tip');
-        var close = document.getElementById('close');
-        var ua = navigator.userAgent.toLowerCase();
-        if (ua.match(/MicroMessenger/i) == "micromessenger") {
-            tip.style.height = winHeight + 'px';
-            tip.style.display = 'block';
-
-            close.onclick = function () {
-                tip.style.display = 'none';
-            }
-        }
-    }
-</script>
 <script type="text/javascript">
     var app = new Vue({
         el: '#app',
@@ -320,6 +326,23 @@
                 this.curLanguage = this.languageText.en;
                 document.title = this.languageText.en.APPName + " " + this.languageText.en.Download;
                 this.btnDownloadText = this.languageText.en.DownloadText1;
+            }
+
+            window.onload = ()=> {
+                var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight; //兼容IOS，不需要的可以去掉
+
+                var tip = document.getElementById('weixin-tip');
+                var close = document.getElementById('close');
+                var ua = navigator.userAgent.toLowerCase();
+                if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                    tip.style.height = winHeight + 'px';
+                    tip.style.display = 'block';
+
+                    close.onclick = function () {
+                        tip.style.display = 'none';
+                    }
+                }
+                this.showPreLoader=false;
             }
         },
         methods: {
