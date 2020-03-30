@@ -22,6 +22,30 @@
             overflow: auto;
         }
 
+
+div#preloader {
+    /*background: linear-gradient(#003dbc, #2283f9);#1f91f3; url("pageloading.gif") no-repeat scroll center center;*/
+    background-image: url("esquel.png"),linear-gradient(#003dbc, #2283f9);
+    background-repeat: no-repeat,no-repeat;
+    background-position: right bottom,center center;
+    background-size:20%,auto;
+    height: 100%;
+    left: 0;
+    overflow: visible;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px;
+}
+
         .logo {
             /*background-image: url(bg.jpg);*/
             margin-top: 30%;
@@ -173,6 +197,7 @@
 
 <body style="background: linear-gradient(#2283f9, #003dbc); ">
     <div id="app">
+        <div id="preloader" v-if="showPreLoader">Loading...</div>
         <div id="weixin-tip">
             <p><img src="live_weixin.png" width="100%" /><span id="close" class="close">×</span>
                 <div class="weixin-tip desc">
@@ -200,23 +225,7 @@
 
 </html>
 
-<script>
-    window.onload = function () {
-        var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight; //兼容IOS，不需要的可以去掉
 
-        var tip = document.getElementById('weixin-tip');
-        var close = document.getElementById('close');
-        var ua = navigator.userAgent.toLowerCase();
-        if (ua.match(/MicroMessenger/i) == "micromessenger") {
-            tip.style.height = winHeight + 'px';
-            tip.style.display = 'block';
-
-            close.onclick = function () {
-                tip.style.display = 'none';
-            }
-        }
-    }
-</script>
 <script type="text/javascript">
     var app = new Vue({
         el: '#app',
@@ -267,7 +276,8 @@
             },
             curLanguage: {},
             btnDownloadText: '立 即 安 装',
-            btnOpenText: '打 开 应 用'
+            btnOpenText: '打 开 应 用',
+            showPreLoader:true,
         },
         created: function () {
             var browLang = navigator.language || navigator.userLanguage;
@@ -283,7 +293,24 @@
                 this.btnDownloadText = this.languageText.en.DownloadText1;
                 this.btnOpenText = this.languageText.en.OpenText1;
             }
+
+            window.onload = ()=> {
+                var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight; //兼容IOS，不需要的可以去掉
+
+                var tip = document.getElementById('weixin-tip');
+                var close = document.getElementById('close');
+                var ua = navigator.userAgent.toLowerCase();
+                if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                    tip.style.height = winHeight + 'px';
+                    tip.style.display = 'block';
+
+                    close.onclick = function () {
+                        tip.style.display = 'none';
+                    }
+                }
+                this.showPreLoader=false;
             this.open();
+            }
         },
         methods: {
             download: function () {
