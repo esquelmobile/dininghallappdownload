@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dining Hall</title>
 
+    <script src="polyfill.min.js"></script>
     <script src="vue.js"></script>
     <style type="text/css">
         html,
@@ -24,7 +25,7 @@
         
         div#preloader {
             /*background: linear-gradient(#003dbc, #2283f9);#1f91f3; url("pageloading.gif") no-repeat scroll center center;*/
-            background-image: url("esquel.png"), linear-gradient(#003dbc, #2283f9);
+            background-image: url("esquel.png"), linear-gradient(#b30522, #ffffff);
             background-repeat: no-repeat, no-repeat;
             background-position: right bottom, center center;
             background-size: 20%, auto;
@@ -230,7 +231,7 @@
             <div class="attribute">
                 <div>{{curLanguage.AppTypeText}}: {{curLanguage.AppTypeValue}}</div>
                 <div>{{curLanguage.Size}}: 20M</div>
-                <div>{{curLanguage.Version}}: 1.7.0</div>
+                <div>{{curLanguage.Version}}: 1.7.1</div>
                 <div>{{curLanguage.Copyright}}: {{curLanguage.CompanyName}}</div>
             </div>
             <div class="introduction">
